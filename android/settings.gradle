@@ -1,0 +1,3 @@
+rootProject.name = 'reliefsupport_android'
+
+include ':app'
