@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/itemLayout"
+        android:clickable="true"
+        app:cardCornerRadius="@dimen/border_size2"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#000000"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/paddingSize2"
+            android:background="@drawable/border_photo_view"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_2"
+                android:textStyle="bold"
+                android:text="text"
+                android:id="@+id/textDisplay"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_1"
+                android:text="info"
+                android:id="@+id/infoDisplay"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_6"
+                android:text="username"
+                android:id="@+id/userNameDisplay"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_6"
+                android:text="address"
+                android:id="@+id/addressDisplay"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_6"
+                android:text="city"
+                android:id="@+id/cityDisplay"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_1"
+                android:text="contact number"
+                android:id="@+id/telNoDisplay"
+                android:clickable="true"
+                android:autoLink="phone"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Android"
+                    android:id="@+id/identifierDisplay"
+                    android:textStyle="bold"
+                    android:textColor="#00ff00"
+                    android:textSize="@dimen/text_size_6"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="date"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/dateDisplay"
+                    android:gravity="center_vertical|right"
+                    android:textSize="@dimen/text_size_6"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

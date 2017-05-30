@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">25dp</dimen>
+    <dimen name="text_size_1">13sp</dimen>
+    <dimen name="design_fab_image_size" tools:override="true">36dp</dimen>
+    <dimen name="text_size_3">13sp</dimen>
+    <dimen name="text_size_header">20sp</dimen>
+    <dimen name="text_size_2">17sp</dimen>
+    <dimen name="paddingSize">35dp</dimen>
+    <dimen name="menuText">30sp</dimen>
+    <dimen name="padLeft">20dp</dimen>
+    <dimen name="widthPara">120dp</dimen>
+    <dimen name="listItemSize">250dp</dimen>
+    <dimen name="listItemSize2">70dp</dimen>
+    <dimen name="paddingSize2">10dp</dimen>
+    <dimen name="widthPara2">100dp</dimen>
+    <dimen name="contactName">17dp</dimen>
+    <dimen name="mailtel">14dp</dimen>
+    <dimen name="logPadding">40dp</dimen>
+    <dimen name="gridItemSize">210dp</dimen>
+    <dimen name="text_size_4">35sp</dimen>
+    <dimen name="border_size">1dp</dimen>
+    <dimen name="border_size2">3dp</dimen>
+    <dimen name="text_size_5">30sp</dimen>
+    <dimen name="text_size_6">12sp</dimen>
+    <dimen name="text_size_login">40sp</dimen>
+    <dimen name="chathead_width">60dp</dimen>
+    <dimen name="chathead_height">60dp</dimen>
+    <dimen name="feedback_box">300dp</dimen>
+    <dimen name="feedback_box2">375dp</dimen>
+    <dimen name="text_size_7">9sp</dimen>
+    <dimen name="widthPara3">150dp</dimen>
+</resources>
