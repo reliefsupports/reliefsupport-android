@@ -31,7 +31,7 @@ date_default_timezone_set('Asia/Colombo');
 		$tokens[] = $rows['device_token_text'];
 	}
 	
-	$url = 'https://roseless-seat.000webhostapp.com/kitchen_app_testing/notificationAPI/kitchenAppNotificationAPI.php'; //URL
+	$url = 'path to the file/kitchenAppNotificationAPI.php'; //URL
 	$fields = array(
 				'userToken' => $tokens,
 				'mainValue' => "[ReliefSupport] New Donation",
