@@ -1,8 +1,7 @@
 <?php
-	$token = $_POST['token'];
 	include_once('connection.php');
 
-	$query = "INSERT INTO device_token_details (device_token_text) VALUES ('$token')";
+	$query = "SELECT notification_main_value, notification_sub_value_1, notification_sub_value_2, notification_sub_value_3, notification_sub_value_4, notification_date_time FROM notification_details ORDER BY notification_id DESC";
 
 	$result = mysqli_query($connection, $query);
 
