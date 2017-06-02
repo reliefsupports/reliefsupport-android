@@ -9,176 +9,201 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:fillViewport="true"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingBottom="@dimen/paddingSize2"
-                android:layout_height="wrap_content">
+                android:paddingBottom="@dimen/paddingSize2">
+
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:paddingBottom="@dimen/paddingSize2">
+
                     <TextView
+                        android:id="@+id/userNameTextDisplay"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your Name"
                         android:textColor="#000000"
-                        android:textSize="@dimen/text_size_6"
-                        android:text="Username"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/text_size_6" />
 
                     <EditText
-                        android:layout_width="match_parent"
                         android:id="@+id/userNameField"
-                        android:textSize="@dimen/text_size_6"
-                        android:hint="type your name here"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter your name here"
                         android:inputType="textPersonName"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/text_size_6" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:paddingBottom="@dimen/paddingSize2">
+
                     <TextView
+                        android:id="@+id/helpingMethodTextDisplay"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Donation"
                         android:textColor="#000000"
-                        android:textSize="@dimen/text_size_6"
-                        android:text="Helping way"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/text_size_6" />
 
                     <EditText
-                        android:layout_width="match_parent"
                         android:id="@+id/helpingMethodField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:hint="Enter your donation here"
                         android:inputType="textMultiLine"
-                        android:gravity="left"
-                        android:hint="type your helping method here"
-                        android:textSize="@dimen/text_size_6"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/text_size_6" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:paddingBottom="@dimen/paddingSize2">
+
                     <TextView
+                        android:id="@+id/infoTextDisplay"
                         android:layout_width="match_parent"
-                        android:textColor="#000000"
-                        android:textSize="@dimen/text_size_6"
+                        android:layout_height="wrap_content"
                         android:text="info"
-                        android:layout_height="wrap_content" />
+                        android:textColor="#000000"
+                        android:textSize="@dimen/text_size_6" />
 
                     <EditText
-                        android:layout_width="match_parent"
                         android:id="@+id/infoField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:hint="Enter your donation info here"
                         android:inputType="text"
-                        android:gravity="left"
-                        android:hint="type your helping method info here"
-                        android:textSize="@dimen/text_size_6"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/text_size_6" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:paddingBottom="@dimen/paddingSize2">
+
                     <TextView
+                        android:id="@+id/addressTextDisplay"
                         android:layout_width="match_parent"
-                        android:textColor="#000000"
-                        android:textSize="@dimen/text_size_6"
+                        android:layout_height="wrap_content"
                         android:text="Address"
-                        android:layout_height="wrap_content" />
+                        android:textColor="#000000"
+                        android:textSize="@dimen/text_size_6" />
 
                     <EditText
-                        android:layout_width="match_parent"
                         android:id="@+id/addressField"
-                        android:textSize="@dimen/text_size_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:gravity="left"
-                        android:hint="type your address here"
+                        android:hint="Enter your address here"
                         android:inputType="textPostalAddress"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/text_size_6" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:paddingBottom="@dimen/paddingSize2">
+
                     <TextView
+                        android:id="@+id/cityTextDisplay"
                         android:layout_width="match_parent"
-                        android:textColor="#000000"
-                        android:textSize="@dimen/text_size_6"
+                        android:layout_height="wrap_content"
                         android:text="City"
-                        android:layout_height="wrap_content" />
+                        android:textColor="#000000"
+                        android:textSize="@dimen/text_size_6" />
 
                     <EditText
-                        android:layout_width="match_parent"
                         android:id="@+id/cityField"
-                        android:textSize="@dimen/text_size_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:gravity="left"
-                        android:hint="type city address here"
+                        android:hint="Enter city address here"
                         android:inputType="textPersonName"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/text_size_6" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:paddingBottom="@dimen/paddingSize2">
+
                     <TextView
+                        android:id="@+id/telNoTextDisplay"
                         android:layout_width="match_parent"
-                        android:textColor="#000000"
-                        android:textSize="@dimen/text_size_6"
+                        android:layout_height="wrap_content"
                         android:text="Contact Number"
-                        android:layout_height="wrap_content" />
+                        android:textColor="#000000"
+                        android:textSize="@dimen/text_size_6" />
 
                     <EditText
-                        android:layout_width="match_parent"
                         android:id="@+id/telNoField"
-                        android:inputType="phone"
-                        android:textSize="@dimen/text_size_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:gravity="left"
-                        android:hint="type your contact number here"
-                        android:layout_height="wrap_content" />
+                        android:hint="Enter your contact number here"
+                        android:inputType="phone"
+                        android:textSize="@dimen/text_size_6" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
                 <android.support.v7.widget.CardView
+                    android:id="@+id/submitButton"
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:clickable="true"
-                    android:id="@+id/submitButton"
                     app:cardBackgroundColor="#008800"
                     app:cardCornerRadius="@dimen/border_size2"
-                    app:cardUseCompatPadding="true"
                     app:cardPreventCornerOverlap="true"
-                    android:layout_height="wrap_content">
+                    app:cardUseCompatPadding="true">
+
                     <TextView
+                        android:id="@+id/submitButtonText"
                         android:layout_width="match_parent"
-                        android:textColor="#FFFFFF"
-                        android:textSize="@dimen/text_size_2"
-                        android:text="SUBMIT"
-                        android:padding="@dimen/border_size2"
+                        android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_height="wrap_content" />
+                        android:padding="@dimen/border_size2"
+                        android:text="SUBMIT"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/text_size_2" />
                 </android.support.v7.widget.CardView>
 
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

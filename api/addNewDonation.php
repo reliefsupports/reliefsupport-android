@@ -8,13 +8,20 @@ date_default_timezone_set('Asia/Colombo');
 	$city = $_POST['city'];
 	$donation = $_POST['donation'];
 	$information = $_POST['information'];
+        $identifier = $_POST['identifier'];
 	include_once('connection.php');
 
 	$query = "INSERT INTO donations (name, telephone, address, city, donation, information, created_at, updated_at, identifier) 
 	
-	VALUES ('$name', '$telephone', '$address', '$city', '$donation', '$information', '$date', '$date', 'a')";
+	VALUES ('$name', '$telephone', '$address', '$city', '$donation', '$information', '$date', '$date', '$identifier')";
 
 	mysqli_query($connection, $query);
+	
+	$query2 = "INSERT INTO notification_details (notification_main_value, notification_sub_value_1, notification_sub_value_2, notification_sub_value_3, notification_sub_value_4) 
+	
+	VALUES ('[ReliefSupport] New Donation', '$name', '$address', '$donation', '$information')";
+
+	mysqli_query($connection, $query2);
 	
 	$queryForNotifications = "
 	SELECT
@@ -31,12 +38,12 @@ date_default_timezone_set('Asia/Colombo');
 		$tokens[] = $rows['device_token_text'];
 	}
 	
-	$url = 'path to the file/kitchenAppNotificationAPI.php'; //URL
+	$url = 'https://roseless-seat.000webhostapp.com/reliefsupport/php/notificationAPI.php'; //URL
 	$fields = array(
 				'userToken' => $tokens,
 				'mainValue' => "[ReliefSupport] New Donation",
 				'subValue1' => $name,
-				'subValue2' => $address. " " . $city,
+				'subValue2' => $address,
 				'subValue3' => $donation,
 				'subValue4' => $information
 			);

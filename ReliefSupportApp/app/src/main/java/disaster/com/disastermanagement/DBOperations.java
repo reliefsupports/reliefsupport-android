@@ -23,6 +23,247 @@ import java.net.URL;
 public class DBOperations {
     Data data = new Data();
 
+    public String[][] getHelpersCountDetails(){
+        String
+                line,
+                result,
+
+                methodNameListAsString = "",
+                needCountListAsString = "";
+
+        InputStream is;
+
+        try {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            try {
+                URL url = new URL(data.getSERVER_URL_PATH() + "getHelpersChartDetails.php");
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(15000);
+                conn.setConnectTimeout(15000);
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+                try {
+                    conn.connect();
+                    is = conn.getInputStream();
+                    try {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(is, "iso-8859-1"), 8);
+                        StringBuilder sb = new StringBuilder();
+
+                        while ((line = reader.readLine()) != null) {
+                            sb.append(line + "\n");
+                        }
+                        result = sb.toString();
+                        result = Html.fromHtml(result).toString();
+                        is.close();
+
+                        try {
+                            JSONArray jArray = new JSONArray(result);
+                            int count = jArray.length();
+                            for (int i = 0; i < count; i++) {
+                                JSONObject jObject = jArray.getJSONObject(i);
+
+                                if(jObject.getString("identifier").equalsIgnoreCase("a")){
+                                    methodNameListAsString += "Android#";
+                                }
+                                else if(jObject.getString("identifier").equalsIgnoreCase("b")){
+                                    methodNameListAsString += "Bot#";
+                                }
+
+                                else if(jObject.getString("identifier").equalsIgnoreCase("i")){
+                                    methodNameListAsString += "IOS#";
+                                }
+
+                                else if(jObject.getString("identifier").equalsIgnoreCase("w")){
+                                    methodNameListAsString += "Web#";
+                                }
+
+                                needCountListAsString  += jObject.getString("countage") + "#";
+
+                            }
+                            return new String[][]{
+                                    methodNameListAsString.split("#"),
+                                    needCountListAsString.split("#")};
+                        } catch (Exception ex) {
+                            System.out.println("Ex " + ex.toString());
+                            return null;
+                        }
+                    } catch (Exception ex) {
+                        System.out.println("Ex " + ex.toString());
+                        return null;
+                    }
+                } catch (Exception e) {
+                    System.out.println("Ex " + e.toString());
+                    return null;
+                }
+            } catch (Exception ex) {
+                System.out.println("Ex " + ex.toString());
+                return null;
+            }
+        } catch (Exception ex) {
+            System.out.println("Ex " + ex.toString());
+            return null;
+        }
+    }
+
+    public String[][] getEmergencyNumberList(){
+        String
+                line,
+                result,
+
+                nameListAsString = "",
+                numberListAsString = "";
+
+        InputStream is;
+
+        try {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            try {
+                URL url = new URL(data.getSERVER_URL_PATH() + "getEmergencyNumberList.php");
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(15000);
+                conn.setConnectTimeout(15000);
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+                try {
+                    conn.connect();
+                    is = conn.getInputStream();
+                    try {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(is, "iso-8859-1"), 8);
+                        StringBuilder sb = new StringBuilder();
+
+                        while ((line = reader.readLine()) != null) {
+                            sb.append(line + "\n");
+                        }
+                        result = sb.toString();
+                        result = Html.fromHtml(result).toString();
+                        is.close();
+
+                        try {
+                            JSONArray jArray = new JSONArray(result);
+                            int count = jArray.length();
+                            for (int i = 0; i < count; i++) {
+                                JSONObject jObject = jArray.getJSONObject(i);
+
+                                nameListAsString  += jObject.getString("emergency_number_name") + "#";
+                                numberListAsString  += jObject.getString("emergency_number_number") + "#";
+
+                            }
+                            return new String[][]{
+                                    nameListAsString.split("#"),
+                                    numberListAsString.split("#")};
+                        } catch (Exception ex) {
+                            System.out.println("Ex " + ex.toString());
+                            return null;
+                        }
+                    } catch (Exception ex) {
+                        System.out.println("Ex " + ex.toString());
+                        return null;
+                    }
+                } catch (Exception e) {
+                    System.out.println("Ex " + e.toString());
+                    return null;
+                }
+            } catch (Exception ex) {
+                System.out.println("Ex " + ex.toString());
+                return null;
+            }
+        } catch (Exception ex) {
+            System.out.println("Ex " + ex.toString());
+            return null;
+        }
+    }
+
+    public String[][] getNeedCountDetails(){
+        String
+                line,
+                result,
+
+                methodNameListAsString = "",
+                needCountListAsString = "";
+
+        InputStream is;
+
+        try {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            try {
+                URL url = new URL(data.getSERVER_URL_PATH() + "getNeedsChartDetails.php");
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(15000);
+                conn.setConnectTimeout(15000);
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+                try {
+                    conn.connect();
+                    is = conn.getInputStream();
+                    try {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(is, "iso-8859-1"), 8);
+                        StringBuilder sb = new StringBuilder();
+
+                        while ((line = reader.readLine()) != null) {
+                            sb.append(line + "\n");
+                        }
+                        result = sb.toString();
+                        result = Html.fromHtml(result).toString();
+                        is.close();
+
+                        try {
+                            JSONArray jArray = new JSONArray(result);
+                            int count = jArray.length();
+                            for (int i = 0; i < count; i++) {
+                                JSONObject jObject = jArray.getJSONObject(i);
+
+                                if(jObject.getString("identifier").equalsIgnoreCase("a")){
+                                    methodNameListAsString += "Android#";
+                                }
+                                else if(jObject.getString("identifier").equalsIgnoreCase("b")){
+                                    methodNameListAsString += "Bot#";
+                                }
+
+                                else if(jObject.getString("identifier").equalsIgnoreCase("i")){
+                                    methodNameListAsString += "IOS#";
+                                }
+
+                                else if(jObject.getString("identifier").equalsIgnoreCase("w")){
+                                    methodNameListAsString += "Web#";
+                                }
+
+                                needCountListAsString  += jObject.getString("countage") + "#";
+
+                            }
+                            return new String[][]{
+                                    methodNameListAsString.split("#"),
+                                    needCountListAsString.split("#")};
+                        } catch (Exception ex) {
+                            System.out.println("Ex " + ex.toString());
+                            return null;
+                        }
+                    } catch (Exception ex) {
+                        System.out.println("Ex " + ex.toString());
+                        return null;
+                    }
+                } catch (Exception e) {
+                    System.out.println("Ex " + e.toString());
+                    return null;
+                }
+            } catch (Exception ex) {
+                System.out.println("Ex " + ex.toString());
+                return null;
+            }
+        } catch (Exception ex) {
+            System.out.println("Ex " + ex.toString());
+            return null;
+        }
+    }
+
     public String[][] getAllNotifications(){
         String
                 line,
@@ -387,7 +628,8 @@ public class DBOperations {
                         .appendQueryParameter("address", address)
                         .appendQueryParameter("city", city)
                         .appendQueryParameter("donation", donation)
-                        .appendQueryParameter("information", information);
+                        .appendQueryParameter("information", information)
+                        .appendQueryParameter("identifier", "A");
 
                 String query = builder.build().getEncodedQuery();
 
@@ -459,7 +701,6 @@ public class DBOperations {
     }
 
     public boolean addNewNeed(String name, String telephone, String address, String city, String needs, String heads){
-
         try {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
@@ -479,7 +720,8 @@ public class DBOperations {
                         .appendQueryParameter("address", address)
                         .appendQueryParameter("city", city)
                         .appendQueryParameter("needs", needs)
-                        .appendQueryParameter("heads", heads);
+                        .appendQueryParameter("heads", heads)
+                        .appendQueryParameter("identifier", "A");
 
                 String query = builder.build().getEncodedQuery();
 
