@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#000"
+        app:cardPreventCornerOverlap="true"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/paddingSize2"
+            android:background="@drawable/border_photo_view"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:paddingBottom="@dimen/border_size2"
+                android:id="@+id/mainValueDisplay"
+                android:text="notification 1"
+                android:textSize="@dimen/text_size_1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#00ff00"
+                android:text="Sub value 1"
+                android:id="@+id/subValue1Display"
+                android:textSize="@dimen/text_size_6"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#00ff00"
+                android:text="Sub value 2"
+                android:id="@+id/subValue2Display"
+                android:textSize="@dimen/text_size_6"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#00ff00"
+                android:text="Sub value 3"
+                android:id="@+id/subValue3Display"
+                android:textSize="@dimen/text_size_6"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#00ff00"
+                android:text="Sub value 4"
+                android:id="@+id/subValue4Display"
+                android:textSize="@dimen/text_size_6"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#FFFFFF"
+                android:text="Date Time"
+                android:gravity="center_vertical|right"
+                android:id="@+id/dateTimeDisplay"
+                android:textSize="@dimen/text_size_6"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

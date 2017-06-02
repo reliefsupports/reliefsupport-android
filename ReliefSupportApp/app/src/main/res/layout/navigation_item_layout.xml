@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:id="@+id/navigationItemButton"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/chathead_height"
+                android:id="@+id/navigationItemIconDisplay"
+                android:src="@drawable/alarm_light"
+                android:padding="@dimen/paddingSize2"
+                android:layout_height="@dimen/chathead_height" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="7"
+                android:textColor="#FFFFFF"
+                android:text="Home"
+                android:gravity="center_vertical"
+                android:id="@+id/navigationItemNameDisplay"
+                android:textSize="@dimen/text_size_1"
+                android:paddingLeft="@dimen/paddingSize2"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+</LinearLayout>
