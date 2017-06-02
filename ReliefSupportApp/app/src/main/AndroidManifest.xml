@@ -18,31 +18,51 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
 
         <activity android:name=".MainActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:screenOrientation="portrait">
         </activity>
 
         <activity android:name=".LoginPageActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:screenOrientation="portrait">
         </activity>
 
         <activity
             android:name=".MainMenuActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:screenOrientation="portrait">
         </activity>
 
         <activity
             android:name=".ViewAllHelpersActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:screenOrientation="portrait">
         </activity>
 
         <activity
             android:name=".ViewAllNeedsActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:screenOrientation="portrait">
         </activity>
 
         <activity
             android:name=".ViewNotificationsActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ViewNeedCountChartActivity"
+            android:screenOrientation="landscape">
+        </activity>
+
+        <activity
+            android:name=".ViewHelpersCountChartActivity"
+            android:screenOrientation="landscape">
+        </activity>
+
+        <activity
+            android:name=".ViewEmergencyNumbersActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".LanguageChangeActivity"
+            android:screenOrientation="portrait">
         </activity>
 
         <activity

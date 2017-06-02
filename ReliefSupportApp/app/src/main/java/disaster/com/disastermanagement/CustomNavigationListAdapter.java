@@ -26,6 +26,8 @@ public class CustomNavigationListAdapter extends BaseAdapter {
     private String[] navigationItemNameList;
     private int[] navigationItemIconList;
 
+    String lan = "";
+
     public CustomNavigationListAdapter(Context context, Activity activity, String[] navigationItemNameList, int[] navigationItemIconList){
         this.context = context;
         this.activity = activity;
@@ -85,50 +87,69 @@ public class CustomNavigationListAdapter extends BaseAdapter {
 
                 switch (position){
                     case 0 :  // Home Section
-                        Intent i2 = new Intent(context, MainMenuActivity.class);
+                        Intent i1 = new Intent(context, MainMenuActivity.class);
+                        context.startActivity(i1);
+                        activity.finish();
+                        break;
+
+                    case 1 : // Emergency Numbers
+                        Intent i2 = new Intent(context, ViewEmergencyNumbersActivity.class);
                         context.startActivity(i2);
                         activity.finish();
                         break;
 
-                    case 1 : // notifications
-                        Intent i = new Intent(context, ViewNotificationsActivity.class);
-                        context.startActivity(i);
+                    case 2 : // notifications
+                        Intent i3 = new Intent(context, ViewNotificationsActivity.class);
+                        context.startActivity(i3);
                         activity.finish();
-
                         break;
 
-                    case 2 : // Logout Section
-                        new AlertDialog.Builder(context)
-                                .setTitle("Exit")
-                                .setMessage("Do you really want to exit?")
-                                .setIcon(android.R.drawable.ic_dialog_alert)
-                                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int whichButton) {
-                                        SharedPreferences sp = context.getSharedPreferences("userCredentials", 0);
-                                        SharedPreferences.Editor spEditor = sp.edit();
+                    case 3 : // Change language
+                        Intent i4 = new Intent(context, LanguageChangeActivity.class);
+                        context.startActivity(i4);
+                        activity.finish();
+                        break;
 
-                                        spEditor.putBoolean("userLogged", false);
-                                        spEditor.putString("userID", "");
-                                        spEditor.putString("userCategoryID", "");
-                                        spEditor.putString("userFirstName", "");
-                                        spEditor.putString("userLastName", "");
-                                        spEditor.putString("userImage", "");
-                                        spEditor.apply();
+                    case 4 : // Exit Section
+                        SharedPreferences sp1 = context.getSharedPreferences("language", 0);
+                        lan += sp1.getString("lan", "1");
+                        switch (lan){
+                            case "1" :
+                                new AlertDialog.Builder(context)
+                                        .setTitle("Exit")
+                                        .setMessage("Do you really want to exit?")
+                                        .setIcon(android.R.drawable.ic_dialog_alert)
+                                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                                System.exit(0);
+                                            }})
+                                        .setNegativeButton(android.R.string.no, null).show();
+                                break;
 
-                                       /* SharedPreferences sp2 = context.getSharedPreferences("notifications", 0);
-                                        SharedPreferences.Editor spEditor2 = sp2.edit();
+                            case "2" :
+                                new AlertDialog.Builder(context)
+                                        .setTitle("ඉවත්වීම")
+                                        .setMessage("ඉවත්වීමට අවශ්\u200Dයයි ද?")
+                                        .setIcon(android.R.drawable.ic_dialog_alert)
+                                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                                System.exit(0);
+                                            }})
+                                        .setNegativeButton(android.R.string.no, null).show();
+                                break;
 
-                                        spEditor2.putString("mainValue", "");
-                                        spEditor2.putString("subValue1", "");
-                                        spEditor2.putString("subValue2", "");
-                                        spEditor2.putString("subValue3", "");
-                                        spEditor2.putString("subValue4", "");
-                                        spEditor2.putString("dateTime", "");
-                                        spEditor2.apply();*/
-
-                                        System.exit(0);
-                                    }})
-                                .setNegativeButton(android.R.string.no, null).show();
+                            case "3" :
+                                new AlertDialog.Builder(context)
+                                        .setTitle("வெளியேறுதல்")
+                                        .setMessage("நீங்கள் வெளியேற விரும்புகிறீர்களா?")
+                                        .setIcon(android.R.drawable.ic_dialog_alert)
+                                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                                System.exit(0);
+                                            }})
+                                        .setNegativeButton(android.R.string.no, null).show();
+                                break;
+                        }
                         break;
                 }
             }

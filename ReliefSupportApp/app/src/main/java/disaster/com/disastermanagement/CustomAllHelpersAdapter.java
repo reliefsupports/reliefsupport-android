@@ -81,7 +81,7 @@ public class CustomAllHelpersAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View gvContent = inflater.inflate(R.layout.helper_item_layout, null);
 
-        Animation animation = AnimationUtils.loadAnimation(context, R.anim.bounce);
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.fade_in);
         gvContent.startAnimation(animation);
 
         final TextView textDisplay = (TextView) gvContent.findViewById(R.id.textDisplay);

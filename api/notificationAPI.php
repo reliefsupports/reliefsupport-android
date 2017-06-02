@@ -1,6 +1,6 @@
 <?php
-$driverToken = $_REQUEST['driverToken']; // device token for driver
-$vehicleOwnerToken = $_REQUEST['vehicleOwnerToken']; // device token for vehicle owner
+$userToken = $_REQUEST['userToken']; // device token for waiter
+
 $mainValue = $_REQUEST['mainValue']; // mandetory field (First value) 
 
 if( isset($_REQUEST['subValue1'])){ // optional field
@@ -42,7 +42,7 @@ function send($messages, $reg){
 		);
 
 	$headers = array(
-		'Authorization:key = AAAARrb9Suw:APA91bG7HwI_OzrlDQ4sSzRMtMN5rzhx9kfPtvHSFEMr1BAYvq_MV6fdJLaWMzr6_HaOfOdQVgq96W-mY9yy64fMVLqG7eakYl5PSPmUzvZ65iLa18qGzsvC9j6xbNt5-n7HUGWILxkU',
+		'Authorization:key =AAAARrb9Suw:APA91bG7HwI_OzrlDQ4sSzRMtMN5rzhx9kfPtvHSFEMr1BAYvq_MV6fdJLaWMzr6_HaOfOdQVgq96W-mY9yy64fMVLqG7eakYl5PSPmUzvZ65iLa18qGzsvC9j6xbNt5-n7HUGWILxkU',
 		'Content-Type: application/json'
 		);
 
@@ -62,7 +62,8 @@ function send($messages, $reg){
 	curl_close($ch);
 	return $result;
 }
-$tokenList = array($driverToken, $vehicleOwnerToken);
+
+$tokenList = array($userToken);
 
 $messages = array(
 			'mainValue' => $mainValue, 
@@ -71,8 +72,8 @@ $messages = array(
 			'subValue3' => $subValue3, 
 			'subValue4' => $subValue4, 
 			);
-$message_status = send($messages, $tokenList);
+$message_status = send($messages, $userToken);
 
-print json_encode(array('messageStatus' => $message_status));
+//print json_encode(array('messageStatus' => $message_status ));
 
 ?>
